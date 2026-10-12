@@ -1,4 +1,7 @@
 // Landing page copy. Edit text here, never inside components.
+import hero from '../../assets/images/hero.jpg'
+
+
 export const home = {
     seo: {
         title: "Fenix | Parceiro oficial Cegid Primavera em Moçambique",
@@ -10,7 +13,7 @@ export const home = {
         title: "Eleve a gestão do seu negócio",
         subtitle: "Aumente a produtividade, melhore o controlo da informação e a tomada de decisões.",
         secondaryCta: { label: "Conhecer soluções", to: "/solucoes" },
-        image: null, // TODO: import hero image from assets/images (e.g. hero.webp)
+        image: hero, // TODO: import hero image from assets/images (e.g. hero.webp)
         imageAlt: "Gestor a acompanhar os indicadores do negócio no portátil e no telemóvel",
     },
 

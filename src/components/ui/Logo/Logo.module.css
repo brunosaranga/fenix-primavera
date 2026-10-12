@@ -4,26 +4,46 @@
 }
 
 .wordmark {
-    height: 48px;
+    height: 64px;   /* was 48px: the navbar text logo */
     width: auto;
 }
 
+.collapsedMark {
+    height: 48px;   /* was 40px: the phoenix in the collapsed bar */
+    width: auto;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Centred text logo (identity band, centred layouts) */
+.wordmarkCenter {
+    height: 72px;
+    width: auto;
+}
+
+/* Standalone phoenix (footer, etc.) */
+.mark {
+    height: 64px;
+    width: auto;
+}
+
+/* Navbar: text logo and phoenix stacked, cross-fade on scroll */
 .collapsible {
-    position: relative;
     display: inline-grid;
     align-items: center;
 }
 
 .collapsible > * {
     grid-area: 1 / 1;
+    justify-self: start;
     transition:
         opacity var(--duration-base) var(--ease-out),
         transform var(--duration-base) var(--ease-out);
 }
 
-.mark {
+.collapsedMark {
     height: 40px;
-    width: 40px;
+    width: auto;
     opacity: 0;
     transform: scale(0.8);
 }
@@ -33,7 +53,7 @@
     transform: scale(0.9);
 }
 
-.isCompact .mark {
+.isCompact .collapsedMark {
     opacity: 1;
     transform: none;
 }

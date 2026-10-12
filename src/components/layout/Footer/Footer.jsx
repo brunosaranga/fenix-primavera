@@ -14,7 +14,7 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={`container ${styles.grid}`}>
                 <div className={styles.brand}>
-                    <Logo tone="inverse" />
+                    <Logo variant="mark" tone="inverse" className={styles.brandMark} />
                     <p className={styles.description}>{footer.description}</p>
                     <PartnerBadge tone="inverse" showLabel={false} />
                 </div>

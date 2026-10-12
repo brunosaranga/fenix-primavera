@@ -45,6 +45,14 @@ export default function Navbar() {
         setHovered(false);
     };
 
+    // Only KEYBOARD focus keeps the bar expanded. A mouse click also focuses the
+    // clicked button/link, which would otherwise pin the bar open until you click elsewhere.
+    const onFocus = (event) => {
+        if (event.target.matches(":focus-visible")) {
+            setFocused(true);
+        }
+    };
+
     const onBlur = (event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
             setFocused(false);
@@ -61,7 +69,7 @@ export default function Navbar() {
                 data-scrolled={scrolled}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
-                onFocus={() => setFocused(true)}
+                onFocus={onFocus}
                 onBlur={onBlur}
             >
                 <div className={`container ${styles.inner}`}>

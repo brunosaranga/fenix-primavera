@@ -12,7 +12,7 @@ export default function IdentityBand() {
         <section className={styles.wrap} aria-labelledby="identity-title">
             <div className={styles.band}>
                 <div className={`container ${styles.inner}`}>
-                    <Logo tone="inverse" link={false} className={styles.logo} />
+                    <Logo variant="center" tone="inverse" link={false} className={styles.logo} />
                     <h2 id="identity-title" className={styles.title}>
                         {identity.title}
                     </h2>

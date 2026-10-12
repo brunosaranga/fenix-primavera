@@ -16,8 +16,8 @@ export default function Home() {
         <>
             <Seo title={home.seo.title} description={home.seo.description} />
             <Hero />
-            <PainPoints />
             <IdentityBand />
+            <PainPoints />
             <Benefits />
             <Comparison variant="compact" />
             <ProcessTimeline />

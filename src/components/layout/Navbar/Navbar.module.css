@@ -27,6 +27,7 @@
     justify-content: space-between;
     gap: var(--space-5);
     height: 100%;
+    max-width: calc(var(--container-wide) + var(--container-pad) * 2);
 }
 
 /* ---- Desktop links (pill, as in the design) ---------------------------- */

@@ -48,3 +48,32 @@ h3 {
 body.is-scroll-locked {
     overflow: hidden;
 }
+
+
+/* ---- Scrollbar ----------------------------------------------------------- */
+
+/* Firefox + Chrome/Edge 121+ */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Safari (and older Chrome) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: var(--radius-pill);
+    border: 2px solid var(--scrollbar-track); /* gap around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}

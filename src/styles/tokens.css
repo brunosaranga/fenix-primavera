@@ -64,6 +64,7 @@
 
     --section-gap: clamp(4rem, 3rem + 4vw, 7rem);
     --container-max: 1200px;
+    --container-wide: 1400px;
     --container-pad: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
 
     /* ---- Radii ----------------------------------------------------------- */
@@ -72,6 +73,11 @@
     --radius-image: 40px;     /* hero image */
     --radius-band: 64px;      /* top corners of dark bands */
     --radius-pill: 999px;     /* buttons, navbar, labels */
+
+    /* ---- Scrollbar----------------------------------------------------------- */
+    --scrollbar-track: var(--surface);
+    --scrollbar-thumb: color-mix(in srgb, var(--blue-500) 100%, transparent);
+    --scrollbar-thumb-hover: var(--blue-500);
 
     /* ---- Motion ---------------------------------------------------------- */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -143,4 +149,8 @@
     --backdrop: rgb(0 6 12 / 0.7);
 
     color-scheme: dark;
+
+    --scrollbar-track: var(--surface);
+    --scrollbar-thumb: color-mix(in srgb, var(--gold-500) 100%, transparent);
+    --scrollbar-thumb-hover: var(--blue-300);
 }

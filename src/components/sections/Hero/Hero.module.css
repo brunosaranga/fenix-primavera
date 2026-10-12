@@ -1,14 +1,17 @@
 .hero {
     background: var(--hero-gradient);
-    padding-top: calc(var(--nav-height) + var(--space-7));
-    padding-bottom: var(--space-8);
+    /* padding-top: calc(var(--nav-height) + var(--space-7)); */
+    /* padding-bottom: var(--space-8); */
+    height: 1490px;
+    display: flex;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     align-items: center;
     gap: var(--space-8);
+    max-width: calc(1900px + var(--container-pad) * 2);
 }
 
 .copy {
@@ -18,7 +21,7 @@
 }
 
 .title {
-    max-width: 14ch;
+    /* max-width: 14ch; */
 }
 
 .subtitle {

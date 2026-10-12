@@ -1,6 +1,7 @@
 .section {
-    background: var(--hero-gradient);
+    /* background: var(--hero-gradient); */
     padding-bottom: var(--space-9);
+    padding-top: var(--space-9);
 }
 
 .label {
