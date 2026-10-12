@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-9);
-    max-width: 60rem;
+    max-width: 90rem;
     margin-inline: auto;
 }
 
