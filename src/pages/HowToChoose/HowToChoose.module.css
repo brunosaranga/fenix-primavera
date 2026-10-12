@@ -1,0 +1,24 @@
+.faq {
+    max-width: 52rem;
+}
+
+.items {
+    margin-top: var(--space-6);
+    border-top: 1px solid var(--border);
+}
+
+.item {
+    border-bottom: 1px solid var(--border);
+}
+
+.item summary {
+    padding-block: var(--space-4);
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    list-style-position: inside;
+}
+
+.item p {
+    padding-bottom: var(--space-4);
+    color: var(--text-muted);
+}

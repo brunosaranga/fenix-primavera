@@ -1,0 +1,70 @@
+/* Outer wrap carries the hero gradient so the band's rounded corners sit on it */
+.wrap {
+    background: var(--hero-gradient);
+}
+
+.band {
+    background: var(--band-gradient);
+    border-radius: var(--radius-band) var(--radius-band) 0 0;
+    color: var(--text-inverse);
+    padding-block: var(--space-9);
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo img {
+    height: 64px;
+}
+
+.title {
+    margin-top: var(--space-6);
+    color: var(--text-inverse);
+}
+
+.text {
+    margin-top: var(--space-4);
+    max-width: 38rem;
+    color: var(--text-inverse-muted);
+}
+
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    width: 100%;
+    margin-top: var(--space-8);
+}
+
+.pillar {
+    display: grid;
+    grid-template-rows: 72px auto; /* same icon row height → labels share a baseline */
+    justify-items: center;
+    gap: var(--space-4);
+}
+
+.pillarIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-inverse);
+}
+
+.pillarLabel {
+    color: var(--text-inverse-muted);
+    max-width: 14rem;
+}
+
+@media (max-width: 899px) {
+    .band {
+        border-radius: calc(var(--radius-band) / 2) calc(var(--radius-band) / 2) 0 0;
+    }
+
+    .pillars {
+        grid-template-columns: 1fr;
+    }
+}

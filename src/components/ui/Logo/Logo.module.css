@@ -1,0 +1,39 @@
+.link {
+    display: inline-flex;
+    border-radius: var(--radius-sm);
+}
+
+.wordmark {
+    height: 48px;
+    width: auto;
+}
+
+.collapsible {
+    position: relative;
+    display: inline-grid;
+    align-items: center;
+}
+
+.collapsible > * {
+    grid-area: 1 / 1;
+    transition:
+        opacity var(--duration-base) var(--ease-out),
+        transform var(--duration-base) var(--ease-out);
+}
+
+.mark {
+    height: 40px;
+    width: 40px;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.isCompact .wordmark {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.isCompact .mark {
+    opacity: 1;
+    transform: none;
+}

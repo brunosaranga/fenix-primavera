@@ -1,0 +1,66 @@
+.section {
+    background: var(--hero-gradient);
+    padding-bottom: var(--space-9);
+}
+
+.label {
+    width: fit-content;
+    margin: 0 auto var(--space-7);
+    padding: 0.4rem 1.1rem;
+    border: 1.5px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.item {
+    position: relative;
+    display: grid;
+    gap: var(--space-4);
+    padding-left: var(--space-2);
+}
+
+.problem,
+.solution {
+    padding: 0.75rem 1.1rem;
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    border: 1.5px solid;
+    text-align: center;
+}
+
+.problem {
+    border-color: var(--problem);
+    margin-right: var(--space-6);
+}
+
+.solution {
+    border-color: var(--solution);
+    margin-left: var(--space-6);
+}
+
+/* One arrow style, always on the left, curving down into the solution */
+.arrow {
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    width: 28px;
+    height: 56px;
+    transform: translateY(-50%);
+    color: var(--solution);
+}
+
+@media (max-width: 899px) {
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 26rem;
+        margin-inline: auto;
+    }
+}

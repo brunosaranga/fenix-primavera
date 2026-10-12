@@ -1,0 +1,16 @@
+.header {
+    background: var(--hero-gradient);
+    padding-top: calc(var(--nav-height) + var(--space-8));
+    padding-bottom: var(--space-4);
+}
+
+.header h1 {
+    font-size: var(--text-3xl);
+    max-width: 18ch;
+}
+
+@media (max-width: 899px) {
+    .header {
+        padding-top: calc(var(--nav-height-compact) + var(--space-7));
+    }
+}

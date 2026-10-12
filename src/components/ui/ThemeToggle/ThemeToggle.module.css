@@ -1,0 +1,14 @@
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-pill);
+    color: var(--text);
+    transition: background-color var(--duration-fast);
+}
+
+.toggle:hover {
+    background: var(--surface-soft);
+}

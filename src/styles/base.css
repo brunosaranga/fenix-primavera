@@ -1,0 +1,50 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-height-compact) + var(--space-5));
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    line-height: var(--leading-normal);
+    color: var(--text);
+    background: var(--surface);
+    transition: background-color var(--duration-base), color var(--duration-base);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: var(--text-3xl);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+}
+
+h3 {
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+}
+
+:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-sm);
+}
+
+::selection {
+    background: var(--sky-200);
+    color: var(--ink-950);
+}
+
+body.is-scroll-locked {
+    overflow: hidden;
+}

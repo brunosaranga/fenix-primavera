@@ -1,0 +1,146 @@
+/* ==========================================================================
+   tokens.css: the single source of truth for the Fenix design system.
+
+   Layer 1: raw palette  (--navy-900, --blue-500…)   → never used in components
+   Layer 2: semantic     (--surface, --text, --accent…) → what components use
+   Dark mode only remaps layer 2.
+
+   Colours were sampled from the Canva landing design.
+   ========================================================================== */
+
+:root {
+    /* ---- Layer 1: raw palette -------------------------------------------- */
+    --ink-950: #001220;       /* near-black navy: text, dark band core */
+    --navy-800: #003660;      /* dark band edges, borders */
+    --navy-700: #004176;
+    --blue-500: #0073d0;      /* brand blue: primary buttons, links */
+    --blue-600: #005fae;      /* brand blue, hover */
+    --blue-300: #6fb3ec;      /* brand blue on dark backgrounds */
+    --sky-200: #d0eaff;       /* hero gradient, soft fills */
+    --sky-100: #e9efff;       /* soft surface */
+    --white: #ffffff;
+    --gold-500: #ff9900;      /* logo accent: step numbers, small highlights */
+    --red-500: #e5484d;       /* problems only (pain points) */
+    --red-300: #ff8589;
+    --grey-600: #4a5866;
+    --grey-400: #8a97a5;
+    --grey-200: #d6dde5;
+
+    /* ---- Typography ------------------------------------------------------ */
+    /* TODO: confirm the Canva fonts. Space Grotesk / Space Mono are placeholders. */
+    --font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+    --text-xs: 0.8125rem;     /* 13px */
+    --text-sm: 0.9375rem;     /* 15px */
+    --text-md: 1.0625rem;     /* 17px: body */
+    --text-lg: 1.25rem;       /* 20px: card titles */
+    --text-xl: 1.5rem;        /* 24px */
+    --text-2xl: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);   /* H2 */
+    --text-3xl: clamp(2.25rem, 1.4rem + 2.8vw, 3.75rem);  /* H1 */
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-bold: 700;
+
+    --leading-tight: 1.15;
+    --leading-snug: 1.35;
+    --leading-normal: 1.6;
+
+    --tracking-wide: 0.08em;
+    --tracking-logo: 0.35em;
+
+    /* ---- Spacing (4px base) --------------------------------------------- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
+
+    --section-gap: clamp(4rem, 3rem + 4vw, 7rem);
+    --container-max: 1200px;
+    --container-pad: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+
+    /* ---- Radii ----------------------------------------------------------- */
+    --radius-sm: 8px;         /* inputs, chips */
+    --radius-card: 12px;      /* cards, pain/solution boxes */
+    --radius-image: 40px;     /* hero image */
+    --radius-band: 64px;      /* top corners of dark bands */
+    --radius-pill: 999px;     /* buttons, navbar, labels */
+
+    /* ---- Motion ---------------------------------------------------------- */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 600ms;
+
+    /* ---- Navbar ---------------------------------------------------------- */
+    --nav-height: 96px;
+    --nav-height-compact: 60px;
+
+    /* ---- Layer 2: semantic tokens (light) -------------------------------- */
+    --surface: var(--white);
+    --surface-soft: var(--sky-100);
+    --surface-raised: var(--white);
+    --surface-inverse: var(--ink-950);
+    --hero-gradient: linear-gradient(100deg, var(--white) 45%, var(--sky-200) 100%);
+    --band-gradient: radial-gradient(ellipse at center, var(--ink-950) 0%, var(--navy-800) 100%);
+
+    --text: var(--ink-950);
+    --text-muted: var(--grey-600);
+    --text-inverse: var(--white);
+    --text-inverse-muted: #c3d3e4;
+
+    --primary: var(--blue-500);
+    --primary-hover: var(--blue-600);
+    --on-primary: var(--white);
+    --accent: var(--gold-500);
+    --problem: var(--red-500);
+    --solution: var(--blue-500);
+
+    --border: var(--grey-200);
+    --border-strong: var(--ink-950);
+    --focus-ring: 0 0 0 3px color-mix(in srgb, var(--blue-500) 45%, transparent);
+
+    --shadow-card: 0 1px 2px rgb(0 18 32 / 0.06), 0 8px 24px rgb(0 18 32 / 0.06);
+    --shadow-nav: 0 8px 30px rgb(0 18 32 / 0.08);
+    --backdrop: rgb(0 18 32 / 0.55);
+
+    color-scheme: light;
+}
+
+/* ---- Layer 2: semantic tokens (dark) ------------------------------------ */
+:root[data-theme="dark"] {
+    --surface: var(--ink-950);
+    --surface-soft: #06223a;
+    --surface-raised: #0a2740;
+    --surface-inverse: #000a12;
+    --hero-gradient: linear-gradient(100deg, var(--ink-950) 45%, var(--navy-800) 100%);
+    --band-gradient: radial-gradient(ellipse at center, #000a12 0%, #022a4b 100%);
+
+    --text: #eef4fb;
+    --text-muted: #a9bacb;
+    --text-inverse: var(--white);
+    --text-inverse-muted: #c3d3e4;
+
+    --primary: var(--blue-500);
+    --primary-hover: #1a86e0;
+    --on-primary: var(--white);
+    --accent: var(--gold-500);
+    --problem: var(--red-300);
+    --solution: var(--blue-300);
+
+    --border: #1d3b56;
+    --border-strong: #5d7a95;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
+    --shadow-nav: 0 8px 30px rgb(0 0 0 / 0.35);
+    --backdrop: rgb(0 6 12 / 0.7);
+
+    color-scheme: dark;
+}

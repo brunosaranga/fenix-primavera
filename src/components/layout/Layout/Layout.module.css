@@ -1,0 +1,6 @@
+/* The navbar is fixed. Pages start with their own top padding (see .pageTop in
+   sections or `--nav-height`), so the hero gradient can run behind the navbar. */
+.main {
+    display: block;
+    min-height: 60vh;
+}

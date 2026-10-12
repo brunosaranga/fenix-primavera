@@ -1,0 +1,83 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-pill);
+    font-weight: var(--weight-medium);
+    line-height: 1;
+    white-space: nowrap;
+    transition:
+        background-color var(--duration-fast),
+        border-color var(--duration-fast),
+        color var(--duration-fast),
+        transform var(--duration-fast);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.md {
+    padding: 0.85rem 1.4rem;
+    font-size: var(--text-sm);
+}
+
+.sm {
+    padding: 0.6rem 1rem;
+    font-size: var(--text-xs);
+}
+
+.icon {
+    display: inline-flex;
+}
+
+.icon svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.primary {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+.primary:hover {
+    background: var(--primary-hover);
+}
+
+.secondary {
+    background: transparent;
+    border-color: var(--border-strong);
+    color: var(--text);
+}
+
+.secondary:hover {
+    background: var(--surface-soft);
+}
+
+.inverse {
+    background: transparent;
+    border-color: color-mix(in srgb, var(--text-inverse) 60%, transparent);
+    color: var(--text-inverse);
+}
+
+.inverse:hover {
+    background: color-mix(in srgb, var(--text-inverse) 10%, transparent);
+}
+
+.whatsapp {
+    background: transparent;
+    border-color: color-mix(in srgb, var(--text-inverse) 60%, transparent);
+    color: var(--text-inverse);
+}
+
+.whatsapp:hover {
+    background: color-mix(in srgb, var(--text-inverse) 10%, transparent);
+}

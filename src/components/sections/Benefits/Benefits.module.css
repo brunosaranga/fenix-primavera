@@ -1,0 +1,29 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    height: 100%;
+    padding: var(--space-6) var(--space-5);
+}
+
+.title {
+    font-size: var(--text-lg);
+}
+
+.icon {
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+@media (max-width: 899px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

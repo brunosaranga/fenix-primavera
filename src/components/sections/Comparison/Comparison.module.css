@@ -1,0 +1,221 @@
+.section {
+    background: var(--surface-soft);
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+/* Both options share the same neutral style: neither looks like "the winner" */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-7) var(--space-6);
+}
+
+.cardIcon {
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-card);
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+.cardTitle {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-tight);
+}
+
+.cardShort {
+    color: var(--text-muted);
+}
+
+.checks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+}
+
+.check svg {
+    flex-shrink: 0;
+    margin-top: 0.2em;
+    color: var(--primary);
+}
+
+.ideal {
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.ideal strong {
+    color: var(--text);
+    font-weight: var(--weight-medium);
+}
+
+.cardLink {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--primary);
+}
+
+.more {
+    margin-top: var(--space-6);
+    text-align: center;
+}
+
+.more a {
+    color: var(--primary);
+    font-weight: var(--weight-medium);
+}
+
+.more a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Modal --------------------------------------------------------------- */
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.modalDescription {
+    color: var(--text-muted);
+}
+
+.modalChecks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2) var(--space-5);
+}
+
+.modal .ideal {
+    margin-top: 0;
+}
+
+.modalSubtitle {
+    font-size: var(--text-md);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailRow {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-sm);
+}
+
+.detailRow dt {
+    color: var(--text-muted);
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ---- Full table ---------------------------------------------------------- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    font-size: var(--text-sm);
+}
+
+.table th,
+.table td {
+    padding: var(--space-4) var(--space-5);
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+}
+
+.table thead th {
+    font-size: var(--text-md);
+    font-weight: var(--weight-medium);
+}
+
+.table tbody th {
+    width: 22%;
+    font-weight: var(--weight-medium);
+    color: var(--text-muted);
+}
+
+.table tbody tr:last-child > * {
+    border-bottom: 0;
+}
+
+@media (max-width: 899px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .modalChecks,
+    .detailRow {
+        grid-template-columns: 1fr;
+        gap: var(--space-1);
+    }
+
+    /* Table → stacked cards */
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table th,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        padding: var(--space-4);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .table tbody th,
+    .table td {
+        padding: var(--space-1) 0;
+        border: 0;
+    }
+
+    .table td::before {
+        content: attr(data-label) ": ";
+        font-weight: var(--weight-medium);
+        color: var(--text);
+    }
+}

@@ -1,0 +1,195 @@
+.navbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    height: var(--nav-height);
+    background: transparent;
+    transition:
+        height var(--duration-base) var(--ease-out),
+        background-color var(--duration-base),
+        box-shadow var(--duration-base);
+}
+
+/* Past the hero: solid bar, even while expanded */
+.navbar[data-scrolled="true"] {
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-nav);
+}
+
+.navbar[data-compact="true"] {
+    height: var(--nav-height-compact);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    height: 100%;
+}
+
+/* ---- Desktop links (pill, as in the design) ---------------------------- */
+.desktopNav {
+    margin-left: auto;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1);
+    border: 1.5px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface);
+    transition: padding var(--duration-base) var(--ease-out);
+}
+
+.navbar[data-compact="true"] .links {
+    padding: 2px;
+}
+
+.link {
+    display: inline-flex;
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
+    color: var(--text);
+    transition: background-color var(--duration-fast), color var(--duration-fast);
+}
+
+.link:hover {
+    background: var(--surface-soft);
+}
+
+/* Active page stays highlighted, also in the compact bar */
+.active,
+.active:hover {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+/* ---- Actions ------------------------------------------------------------ */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.toggles {
+    display: flex;
+    align-items: center;
+}
+
+/* ---- Burger (mobile only) ---------------------------------------------- */
+.burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+}
+
+.burgerLines,
+.burgerLines::before,
+.burgerLines::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform var(--duration-base) var(--ease-out), opacity var(--duration-fast);
+}
+
+.burgerLines {
+    position: relative;
+}
+
+.burgerLines::before,
+.burgerLines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.burgerLines::before {
+    top: -7px;
+}
+
+.burgerLines::after {
+    top: 7px;
+}
+
+.burgerLines[data-open="true"] {
+    background: transparent;
+}
+
+.burgerLines[data-open="true"]::before {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burgerLines[data-open="true"]::after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- Mobile menu --------------------------------------------------------- */
+.mobileMenu {
+    position: fixed;
+    inset: var(--nav-height-compact) 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-6) var(--container-pad) var(--space-7);
+    background: var(--surface);
+    animation: slideIn var(--duration-base) var(--ease-out);
+}
+
+.mobileMenu[hidden] {
+    display: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+.mobileLinks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.mobileLinks .link {
+    font-size: var(--text-2xl);
+    padding: var(--space-2) var(--space-4);
+}
+
+.mobileFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.mobileToggles {
+    display: flex;
+}
+
+@media (max-width: 899px) {
+    .desktopNav,
+    .toggles,
+    .cta {
+        display: none;
+    }
+
+    .burger {
+        display: inline-flex;
+    }
+
+    .navbar {
+        height: var(--nav-height-compact);
+    }
+}
