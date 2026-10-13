@@ -3,7 +3,7 @@ export const pages = {
     about: {
         seo: { title: "Sobre nós | Fenix", description: "Conheça a Fenix, parceira oficial Cegid Primavera em Moçambique." },
         label: "Sobre nós",
-        title: "Tecnologia global, equipa local.",
+        title: "Slogan.",
         text: "TODO: história da Fenix, missão e equipa (conteúdo a fornecer pela Fenix).",
     },
     publicSector: {
